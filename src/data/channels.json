@@ -1,0 +1,21 @@
+[
+  { "id": "openai", "name": "OpenAI", "accessCN": false },
+  { "id": "anthropic", "name": "Anthropic", "accessCN": false },
+  { "id": "google", "name": "Google", "accessCN": false },
+  { "id": "meta", "name": "Meta", "accessCN": false },
+  { "id": "mistral", "name": "Mistral AI", "accessCN": false },
+  { "id": "xai", "name": "xAI", "accessCN": false },
+  { "id": "cohere", "name": "Cohere", "accessCN": false },
+  { "id": "amazon-bedrock", "name": "Amazon Bedrock", "accessCN": false },
+  { "id": "deepseek", "name": "DeepSeek", "accessCN": true },
+  { "id": "alibaba", "name": "Alibaba Model Studio", "accessCN": false },
+  { "id": "alibaba-cn", "name": "阿里云百炼", "accessCN": true },
+  { "id": "moonshotai", "name": "Moonshot AI", "accessCN": false },
+  { "id": "moonshotai-cn", "name": "月之暗面", "accessCN": true },
+  { "id": "zhipuai", "name": "智谱 AI", "accessCN": true },
+  { "id": "zai", "name": "Z.AI", "accessCN": false },
+  { "id": "volcengine", "name": "火山方舟", "accessCN": true },
+  { "id": "minimax", "name": "MiniMax", "accessCN": false },
+  { "id": "minimax-cn", "name": "MiniMax 中国站", "accessCN": true },
+  { "id": "tencent-tokenhub", "name": "腾讯 TokenHub", "accessCN": true }
+]

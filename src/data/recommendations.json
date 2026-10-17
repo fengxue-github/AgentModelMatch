@@ -1,0 +1,413 @@
+{
+  "scenarios": [
+    {
+      "id": "write-with-image",
+      "title": "看图写作",
+      "description": "需要读懂图片，再写文案、报告或脚本，适合把视觉素材直接变成文字。",
+      "requiresInput": [
+        "image"
+      ],
+      "requiresOutput": [
+        "text"
+      ],
+      "maxPrice": 1,
+      "minContextWindow": null,
+      "accessCN": false,
+      "requiresFreeTier": false,
+      "recommendations": [
+        {
+          "model": {
+            "id": "meta/llama-4-scout-17b-instruct",
+            "slug": "meta-llama-4-scout-17b-instruct",
+            "name": "Llama 4 Scout 17B Instruct",
+            "vendor": "Meta",
+            "region": "international",
+            "description": "Open Llama with long-context vision for efficient multimodal agents",
+            "pricing": {
+              "lowestInputPerM": 0.17,
+              "lowestOutputPerM": 0.59,
+              "freeTierAvailable": false
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "amazon-bedrock",
+                "name": "Amazon Bedrock",
+                "accessCN": false
+              }
+            ],
+            "contextWindow": 10000000,
+            "maxOutputTokens": 16384,
+            "releaseDate": "2025-04-05",
+            "reasoning": false,
+            "toolCall": true,
+            "openWeights": true
+          },
+          "reason": "支持图片输入，输入价 $0.17 / M tokens，适合把截图或照片直接变成文字内容。"
+        },
+        {
+          "model": {
+            "id": "alibaba/qwen3.8-flash",
+            "slug": "alibaba-qwen3-8-flash",
+            "name": "Qwen3.8 Flash",
+            "vendor": "阿里云 Qwen",
+            "region": "domestic",
+            "description": "Qwen vision-language model for visual reasoning, documents, and agent tasks",
+            "pricing": {
+              "lowestInputPerM": 0.11,
+              "lowestOutputPerM": 0.38,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image",
+                "video"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba",
+                "name": "Alibaba Model Studio",
+                "accessCN": false
+              },
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 131072,
+            "releaseDate": "2026-08-26",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": false
+          },
+          "reason": "支持图片输入，输入价 $0.11 / M tokens，适合把截图或照片直接变成文字内容。 无需折腾网络，国内直接可用。"
+        },
+        {
+          "model": {
+            "id": "bytedance-seed/seed-2.0-lite",
+            "slug": "bytedance-seed-seed-2-0-lite",
+            "name": "Seed 2.0 Lite",
+            "vendor": "字节跳动 Seed",
+            "region": "domestic",
+            "description": "Cost-efficient ByteDance Seed 2.0 model for production chat, analysis, and structured generation",
+            "pricing": {
+              "lowestInputPerM": 0.08906,
+              "lowestOutputPerM": 0.53436,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image",
+                "video"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "volcengine",
+                "name": "火山方舟",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 256000,
+            "maxOutputTokens": 32000,
+            "releaseDate": "2026-02-14",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": false
+          },
+          "reason": "支持图片输入，输入价 $0.089 / M tokens，适合把截图或照片直接变成文字内容。 无需折腾网络，国内直接可用。"
+        }
+      ]
+    },
+    {
+      "id": "cheap-long-doc",
+      "title": "便宜读长文",
+      "description": "预算有限，但需要把长报告、合同或代码库一次性交给模型分析。",
+      "requiresInput": [
+        "text"
+      ],
+      "requiresOutput": [
+        "text"
+      ],
+      "maxPrice": 1,
+      "minContextWindow": 200000,
+      "accessCN": false,
+      "requiresFreeTier": false,
+      "recommendations": [
+        {
+          "model": {
+            "id": "meta/llama-4-scout-17b-instruct",
+            "slug": "meta-llama-4-scout-17b-instruct",
+            "name": "Llama 4 Scout 17B Instruct",
+            "vendor": "Meta",
+            "region": "international",
+            "description": "Open Llama with long-context vision for efficient multimodal agents",
+            "pricing": {
+              "lowestInputPerM": 0.17,
+              "lowestOutputPerM": 0.59,
+              "freeTierAvailable": false
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "amazon-bedrock",
+                "name": "Amazon Bedrock",
+                "accessCN": false
+              }
+            ],
+            "contextWindow": 10000000,
+            "maxOutputTokens": 16384,
+            "releaseDate": "2025-04-05",
+            "reasoning": false,
+            "toolCall": true,
+            "openWeights": true
+          },
+          "reason": "上下文 10,000,000 tokens，输入价 $0.17 / M tokens，长文档分析成本低。"
+        },
+        {
+          "model": {
+            "id": "deepseek/deepseek-v4-flash",
+            "slug": "deepseek-deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "vendor": "深度求索 DeepSeek",
+            "region": "domestic",
+            "description": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
+            "pricing": {
+              "lowestInputPerM": 0.0625,
+              "lowestOutputPerM": 0.125,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 384000,
+            "releaseDate": "2026-04-24",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": true
+          },
+          "reason": "上下文 1,000,000 tokens，输入价 $0.063 / M tokens，长文档分析成本低。 无需折腾网络，国内直接可用。"
+        },
+        {
+          "model": {
+            "id": "alibaba/qwen3.8-flash",
+            "slug": "alibaba-qwen3-8-flash",
+            "name": "Qwen3.8 Flash",
+            "vendor": "阿里云 Qwen",
+            "region": "domestic",
+            "description": "Qwen vision-language model for visual reasoning, documents, and agent tasks",
+            "pricing": {
+              "lowestInputPerM": 0.11,
+              "lowestOutputPerM": 0.38,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image",
+                "video"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba",
+                "name": "Alibaba Model Studio",
+                "accessCN": false
+              },
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 131072,
+            "releaseDate": "2026-08-26",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": false
+          },
+          "reason": "上下文 1,000,000 tokens，输入价 $0.11 / M tokens，长文档分析成本低。 无需折腾网络，国内直接可用。"
+        }
+      ]
+    },
+    {
+      "id": "free-direct-cn",
+      "title": "国内免费闲聊",
+      "description": "想找一个有免费额度、国内可直连、适合日常对话的中文模型。",
+      "requiresInput": [
+        "text"
+      ],
+      "requiresOutput": [
+        "text"
+      ],
+      "maxPrice": 0.5,
+      "minContextWindow": null,
+      "accessCN": true,
+      "requiresFreeTier": true,
+      "recommendations": [
+        {
+          "model": {
+            "id": "deepseek/deepseek-v4-flash",
+            "slug": "deepseek-deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "vendor": "深度求索 DeepSeek",
+            "region": "domestic",
+            "description": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
+            "pricing": {
+              "lowestInputPerM": 0.0625,
+              "lowestOutputPerM": 0.125,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 384000,
+            "releaseDate": "2026-04-24",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": true
+          },
+          "reason": "有免费额度，且可通过 阿里云百炼 国内直连，日常闲聊不折腾。 无需折腾网络，国内直接可用。"
+        },
+        {
+          "model": {
+            "id": "alibaba/qwen3.8-flash",
+            "slug": "alibaba-qwen3-8-flash",
+            "name": "Qwen3.8 Flash",
+            "vendor": "阿里云 Qwen",
+            "region": "domestic",
+            "description": "Qwen vision-language model for visual reasoning, documents, and agent tasks",
+            "pricing": {
+              "lowestInputPerM": 0.11,
+              "lowestOutputPerM": 0.38,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text",
+                "image",
+                "video"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba",
+                "name": "Alibaba Model Studio",
+                "accessCN": false
+              },
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 131072,
+            "releaseDate": "2026-08-26",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": false
+          },
+          "reason": "有免费额度，且可通过 阿里云百炼 国内直连，日常闲聊不折腾。 无需折腾网络，国内直接可用。"
+        },
+        {
+          "model": {
+            "id": "deepseek/deepseek-v4-pro",
+            "slug": "deepseek-deepseek-v4-pro",
+            "name": "DeepSeek V4 Pro",
+            "vendor": "深度求索 DeepSeek",
+            "region": "domestic",
+            "description": "Open MoE flagship with million-token context for coding and long agent runs",
+            "pricing": {
+              "lowestInputPerM": 0.2088,
+              "lowestOutputPerM": 0.4176,
+              "freeTierAvailable": true
+            },
+            "modalities": {
+              "input": [
+                "text"
+              ],
+              "output": [
+                "text"
+              ]
+            },
+            "channels": [
+              {
+                "id": "alibaba-cn",
+                "name": "阿里云百炼",
+                "accessCN": true
+              }
+            ],
+            "contextWindow": 1000000,
+            "maxOutputTokens": 384000,
+            "releaseDate": "2026-04-24",
+            "reasoning": true,
+            "toolCall": true,
+            "openWeights": true
+          },
+          "reason": "有免费额度，且可通过 阿里云百炼 国内直连，日常闲聊不折腾。 无需折腾网络，国内直接可用。"
+        }
+      ]
+    }
+  ]
+}

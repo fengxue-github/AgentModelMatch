@@ -1,0 +1,52 @@
+[
+  {
+    "modelId": "anthropic/claude-fable-5",
+    "providerId": "deepinfra",
+    "name": "Claude Fable 5",
+    "pricing": {
+      "lowestInputPerM": 10,
+      "lowestOutputPerM": 50,
+      "freeTierAvailable": false
+    }
+  },
+  {
+    "modelId": "tencent/hy3",
+    "providerId": "deepinfra",
+    "name": "Hy3",
+    "pricing": {
+      "lowestInputPerM": 0.13,
+      "lowestOutputPerM": 0.53,
+      "freeTierAvailable": false
+    }
+  },
+  {
+    "modelId": "tencent/hy4-preview",
+    "providerId": "deepinfra",
+    "name": "Hy4 preview",
+    "pricing": {
+      "lowestInputPerM": 0.834,
+      "lowestOutputPerM": 2.501,
+      "freeTierAvailable": false
+    }
+  },
+  {
+    "modelId": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "providerId": "deepinfra",
+    "name": "Llama 3.3 70B Turbo",
+    "pricing": {
+      "lowestInputPerM": 0.1,
+      "lowestOutputPerM": 0.32,
+      "freeTierAvailable": false
+    }
+  },
+  {
+    "modelId": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "providerId": "deepinfra",
+    "name": "Llama 4 Scout 17B",
+    "pricing": {
+      "lowestInputPerM": 0.1,
+      "lowestOutputPerM": 0.3,
+      "freeTierAvailable": false
+    }
+  }
+]
