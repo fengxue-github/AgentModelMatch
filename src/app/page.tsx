@@ -1,4 +1,12 @@
-import { ArrowRight, BookOpen, Globe2, Landmark, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Globe2,
+  Landmark,
+  Moon,
+  Sparkles,
+  Sun,
+} from "lucide-react";
 import Link from "next/link";
 
 import { ModelCard } from "@/components/model-card";
@@ -16,14 +24,14 @@ interface ModelSectionProps {
 
 function ModelSection({ title, countLabel, models, icon: Icon }: ModelSectionProps) {
   return (
-    <section className="border-t border-slate-200 bg-slate-50">
+    <section className="border-t border-[var(--border)] bg-[var(--surface-muted)]">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-5 flex items-end justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <Icon aria-hidden="true" className="size-5 text-slate-500" />
-            <h2 className="text-xl font-semibold text-slate-950">{title}</h2>
+            <Icon aria-hidden="true" className="size-5 text-[var(--text-muted)]" />
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">{title}</h2>
           </div>
-          <span className="text-sm text-slate-500">{countLabel}</span>
+          <span className="text-sm text-[var(--text-muted)]">{countLabel}</span>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {models.map((model) => (
@@ -39,58 +47,75 @@ export default function HomePage() {
   const totalModels = internationalModels.length + domesticModels.length;
 
   return (
-    <main className="min-h-screen">
-      <header className="border-b border-slate-200 bg-white">
+    <main className="home-theme min-h-screen bg-[var(--page-bg)] text-[var(--text-primary)] transition-colors">
+      <input
+        id="theme-toggle"
+        type="checkbox"
+        className="sr-only"
+        aria-label="切换暗黑模式"
+      />
+      <header className="border-b border-[var(--border)] bg-[var(--surface)]">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="grid size-10 place-items-center rounded-lg bg-slate-950 text-white">
-                  <BookOpen aria-hidden="true" className="size-5" />
-                </span>
-                <span className="text-sm font-medium text-slate-500">
-                  AgentModelMatch
-                </span>
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="grid size-10 place-items-center rounded-lg bg-[var(--text-primary)] text-[var(--surface)]">
+                    <BookOpen aria-hidden="true" className="size-5" />
+                  </span>
+                  <span className="text-sm font-medium text-[var(--text-muted)]">
+                    AgentModelMatch
+                  </span>
+                </div>
+                <label
+                  htmlFor="theme-toggle"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface-subtle)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--text-faint)]"
+                >
+                  <Sun aria-hidden="true" className="theme-icon-sun size-4" />
+                  <Moon aria-hidden="true" className="theme-icon-moon size-4" />
+                  <span className="theme-label-dark">暗黑模式</span>
+                  <span className="theme-label-light">浅色模式</span>
+                </label>
               </div>
-              <h1 className="text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+              <h1 className="text-3xl font-semibold leading-tight text-[var(--text-primary)] sm:text-4xl">
                 模型大白话百科
               </h1>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
+              <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--text-secondary)] sm:text-base">
                 一页看懂主流模型的价格、基础能力和多模态支持。
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-l-0 border-slate-200 md:border-l md:pl-8">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-l-0 border-[var(--border)] md:border-l md:pl-8">
               <div>
-                <p className="text-2xl font-semibold text-slate-950">{totalModels}</p>
-                <p className="mt-1 text-xs text-slate-500">全部模型</p>
+                <p className="text-2xl font-semibold text-[var(--text-primary)]">{totalModels}</p>
+                <p className="mt-1 text-xs text-[var(--text-muted)]">全部模型</p>
               </div>
               <div>
-                <p className="text-2xl font-semibold text-slate-950">
+                <p className="text-2xl font-semibold text-[var(--text-primary)]">
                   {internationalModels.length}
                 </p>
-                <p className="mt-1 text-xs text-slate-500">海外模型</p>
+                <p className="mt-1 text-xs text-[var(--text-muted)]">海外模型</p>
               </div>
               <div>
-                <p className="text-2xl font-semibold text-slate-950">
+                <p className="text-2xl font-semibold text-[var(--text-primary)]">
                   {domesticModels.length}
                 </p>
-                <p className="mt-1 text-xs text-slate-500">国内模型</p>
+                <p className="mt-1 text-xs text-[var(--text-muted)]">国内模型</p>
               </div>
             </div>
           </div>
 
           <Link
             href="/match"
-            className="group mt-8 flex flex-col gap-4 rounded-lg bg-slate-950 px-5 py-4 text-white transition hover:bg-slate-800 sm:flex-row sm:items-center sm:justify-between"
+            className="group mt-8 flex flex-col gap-4 rounded-lg bg-[var(--cta-bg)] px-5 py-4 text-[var(--cta-text)] transition hover:bg-[var(--cta-hover)] sm:flex-row sm:items-center sm:justify-between"
           >
             <div className="flex items-start gap-3">
-              <span className="grid size-9 shrink-0 place-items-center rounded-md bg-white/10 text-white">
+              <span className="grid size-9 shrink-0 place-items-center rounded-md bg-[var(--cta-soft)]">
                 <Sparkles aria-hidden="true" className="size-4" />
               </span>
               <div>
                 <p className="font-semibold">不知道选哪个？</p>
-                <p className="mt-1 text-xs leading-5 text-slate-300">
+                <p className="mt-1 text-xs leading-5 text-[var(--cta-muted)]">
                   按场景快速匹配合适的模型与推荐理由。
                 </p>
               </div>
@@ -104,7 +129,7 @@ export default function HomePage() {
             </span>
           </Link>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-slate-100 pt-5 text-xs text-slate-500">
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[var(--border-subtle)] pt-5 text-xs text-[var(--text-muted)]">
             <span className="flex items-center gap-1.5">
               <span className="h-1.5 w-5 rounded-sm bg-emerald-500" />
               绿色代表便宜

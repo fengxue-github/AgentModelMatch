@@ -44,7 +44,7 @@ export function ModalityIcons({ items, className = "" }: ModalityIconsProps) {
           <span
             key={item}
             title={modality.label}
-            className="grid size-7 place-items-center rounded-md border border-slate-200 bg-slate-50 text-slate-600"
+            className="grid size-7 place-items-center rounded-md border border-[var(--border)] bg-[var(--surface-subtle)] text-[var(--text-secondary)]"
           >
             <Icon aria-hidden="true" className="size-3.5" strokeWidth={1.8} />
             <span className="sr-only">{modality.label}</span>

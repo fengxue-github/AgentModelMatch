@@ -9,22 +9,24 @@ export function ChannelBadge({ channels }: ChannelBadgeProps) {
 
   if (hasAccessCN) {
     return (
-      <span className="inline-flex items-center rounded-md border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-700">
-        ⚡️ 国内直连
+      <span className="inline-flex items-center gap-1 rounded-md border border-[var(--success-border)] bg-[var(--success-bg)] px-2 py-1 text-xs font-medium text-[var(--success-text)]">
+        <span aria-hidden="true">⚡️</span>
+        <span>国内直连</span>
       </span>
     );
   }
 
   if (channels.length > 0) {
     return (
-      <span className="inline-flex items-center rounded-md border border-amber-200 bg-amber-50 px-2 py-1 text-xs font-medium text-amber-800">
-        🌍 需科学上网
+      <span className="inline-flex items-center gap-1 rounded-md border border-[var(--warning-border)] bg-[var(--warning-bg)] px-2 py-1 text-xs font-medium text-[var(--warning-text)]">
+        <span aria-hidden="true">🌍</span>
+        <span>需科学上网</span>
       </span>
     );
   }
 
   return (
-    <span className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600">
+    <span className="inline-flex items-center rounded-md border border-[var(--border)] bg-[var(--surface-subtle)] px-2 py-1 text-xs font-medium text-[var(--text-muted)]">
       渠道待确认
     </span>
   );

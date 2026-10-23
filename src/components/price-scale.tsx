@@ -103,7 +103,7 @@ export function PriceScale({ pricing }: PriceScaleProps) {
         pricing.lowestOutputPerM,
       )}，${tier.label}`}
     >
-      <div className="flex items-center justify-between gap-3 text-xs text-slate-500">
+      <div className="flex items-center justify-between gap-3 text-xs text-[var(--text-muted)]">
         <span>输入 {formatPrice(pricing.lowestInputPerM)}</span>
         <span>输出 {formatPrice(pricing.lowestOutputPerM)}</span>
       </div>
@@ -112,14 +112,16 @@ export function PriceScale({ pricing }: PriceScaleProps) {
           <span
             key={index}
             className={`h-1.5 rounded-sm ${
-              index < tier.activeSegments ? tier.colorClass : "bg-slate-200"
+              index < tier.activeSegments
+                ? tier.colorClass
+                : "bg-[var(--surface-subtle)]"
             }`}
           />
         ))}
       </div>
       <div className="mt-2 flex items-center justify-between text-[11px]">
         <span className={`font-medium ${tier.textClass}`}>{tier.label}</span>
-        <span className="text-slate-400">USD / M tokens</span>
+        <span className="text-[var(--text-faint)]">USD / M tokens</span>
       </div>
     </div>
   );
